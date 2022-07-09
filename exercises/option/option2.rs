@@ -6,11 +6,10 @@
 fn main() {
     let optional_word = Some(String::from("rustlings"));
     // TODO: Make this an if let statement whose value is "Some" type
-    word = optional_word {
-        println!("The word is: {}", word);
-    } else {
-        println!("The optional word doesn't contain anything");
-    }
+    let word = match optional_word {
+        Some(word) => word,
+        None => String::from("default"),
+    };
 
     let mut optional_integers_vec: Vec<Option<i8>> = Vec::new();
     for x in 1..10 {
